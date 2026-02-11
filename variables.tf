@@ -27,13 +27,13 @@ EOT
     snapshot_resource_group_name = string
     vault_id                     = string
     backup_datasource_parameters = optional(object({
-      cluster_scoped_resources_enabled = optional(bool, false)
+      cluster_scoped_resources_enabled = optional(bool) # Default: false
       excluded_namespaces              = optional(list(string))
       excluded_resource_types          = optional(list(string))
       included_namespaces              = optional(list(string))
       included_resource_types          = optional(list(string))
       label_selectors                  = optional(list(string))
-      volume_snapshot_enabled          = optional(bool, false)
+      volume_snapshot_enabled          = optional(bool) # Default: false
     }))
   }))
 }
